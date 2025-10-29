@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+#root {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.App {
+  /* background-color: black; */
+  color: black;
+  background-color: white;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px;
+  padding: 0px 0px 100px 0px;
+}
+
+
+.active-nav-element {
+  background-color: black;
+  padding: 8px 17px;
+  border-radius: 8px;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .active-nav-element {
+    padding: 8px 0px;
+    display: flex;
+    justify-content: start;
+  }
+}
+
