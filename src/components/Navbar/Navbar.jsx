@@ -36,9 +36,6 @@ const Navbar = () => {
     setDisplayNavContainer(!displayNavContainer);
   };
 
-  const changeActiveSectionHandler = (section) => {
-    setActiveSection(section);
-  };
 
   const avatarUrl =  userData?.profilePic && userData.profilePic.trim() !== "" ? userData.profilePic
       : defaultAvatar;
@@ -159,7 +156,6 @@ const Navbar = () => {
             className={`flex items-center text-[23px] hover:bg-gray-300 hover:px-[17px] hover:py-[8px] hover:rounded-2xl justify-center ${
               activeSection === "feed" ? "active-nav-element" : ""
             }`}
-            onClick={() => changeActiveSectionHandler("feed")}
           >
             <IoHomeOutline className="mr-2" /> Feed
           </Link>
@@ -168,7 +164,6 @@ const Navbar = () => {
             className={`flex items-center text-[23px] hover:bg-gray-300 hover:px-[17px] hover:py-[8px] hover:rounded-2xl justify-center ${
               activeSection === "create-blog" ? "active-nav-element" : ""
             }`}
-            onClick={() => changeActiveSectionHandler("create-blog")}
           >
             <CiPen className="mr-2" />
             Create Blog
@@ -178,7 +173,6 @@ const Navbar = () => {
             className={`flex items-center text-[23px] hover:bg-gray-300 hover:px-[17px] hover:py-[8px] hover:rounded-2xl justify-center ${
               activeSection === "profile" ? "active-nav-element" : ""
             }`}
-            onClick={() => changeActiveSectionHandler("profile")}
           >
             <LiaUserSolid className="mr-2" /> Profile
           </Link>
