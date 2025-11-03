@@ -7,12 +7,14 @@ import { useNavigate } from "react-router-dom";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   useEffect(() => {
     localStorage.clear();
   }, []);
   const handleSubmit = async(e) => {
     e.preventDefault();
+    setError("");
     try {
       const loginData = { email, password};
       console.log("Login data:", loginData);
@@ -32,9 +34,11 @@ const LoginForm = () => {
         navigate('/');
       } else {
         console.error("Login failed:", data);
+        setError(data.message || "Login failed");
       }
     } catch(error) {
       console.error("Error during login:", error);
+      setError("Unable to connect to server");  
     }
   };
 
@@ -90,6 +94,7 @@ const LoginForm = () => {
         >
           Submit
         </button>
+        {error && <div className="text-red-500">{error}</div>}
       </form>
     </div>
   );

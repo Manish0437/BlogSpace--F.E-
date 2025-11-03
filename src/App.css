@@ -17,8 +17,13 @@
   min-height: 100vh;
   margin: 0px;
   padding: 0px 0px 100px 0px;
+  /* cursor: url("/bs-icon-2.svg") 0 0, auto;
+  pointer-events: auto; */
 }
 
+/* body {
+  cursor: url('/bs-icon-2.svg'), auto;
+} */
 
 .active-nav-element {
   background-color: black;
